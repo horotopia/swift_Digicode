@@ -23,4 +23,21 @@ class ViewModel: ObservableObject {
             }
             .assign(to: &$connected)
     }
+    
+    static func signIn(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) {(_, error) in
+            if let error = error {
+                print("Error: \(error)")
+            }
+        }
+    }
+    
+    static func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
 }

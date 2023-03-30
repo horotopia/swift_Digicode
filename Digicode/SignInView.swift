@@ -34,20 +34,7 @@ struct SignInView: View {
             SecureField("Password", text: $password)
             Button("Login", action: {
                 print("e-mail: \(email), password: \(password)")
-                
-                Auth.auth().signIn(withEmail: email, password: password) {(_, error) in
-                    if let error = error {
-                        print("Error: \(error)")
-                        self.error = error.localizedDescription
-                        return
-                    }
-                    
-//                    if let result = result {
-//                        // connected = true
-//                        print(result.user.uid)
-//                    }
-                }
-            })
+                ViewModel.signIn(withEmail: email, password: password)})
             Spacer()
         }
         .padding()
