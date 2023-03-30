@@ -7,11 +7,18 @@
 
 import Foundation
 import SwiftUI
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+import FirebaseFirestoreCombineSwift
 import FirebaseAuth
 import FirebaseAuthCombineSwift
+import Combine
 
 class ViewModel: ObservableObject {
     @Published var connected = (Auth.auth().currentUser != .none)
+    @Published var user = Auth.auth().currentUser
+    @Published var codes = [Code]()
     
     init() {
         Auth.auth().authStateDidChangePublisher()
@@ -22,6 +29,23 @@ class ViewModel: ObservableObject {
                 }
             }
             .assign(to: &$connected)
+        
+        Auth.auth().authStateDidChangePublisher().assign(to: &$user)
+        
+        let db = Firestore.firestore()
+        db.collection("d1g1c0d3")
+            .snapshotPublisher()
+            .tryMap { querySnapshot in
+                try querySnapshot.documents.compactMap { documentSnapshot in
+                    try documentSnapshot.data(as: Code.self)
+                }
+            }
+            .replaceError(with: [Code]())
+            .handleEvents(receiveCancel: {
+                print("Cancelled")
+            })
+            .print("*** Codes")
+            .assign(to: &$codes)
     }
     
     static func signIn(withEmail email: String, password: String) {
@@ -39,5 +63,4 @@ class ViewModel: ObservableObject {
             print("Error: \(error.localizedDescription)")
         }
     }
-    
 }

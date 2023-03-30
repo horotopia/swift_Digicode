@@ -20,6 +20,7 @@
 		07BCFC7729D44BC9008887F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07BCFC7629D44BC9008887F1 /* GoogleService-Info.plist */; };
 		07BD4A5829D57E3300B1F78C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD4A5729D57E3300B1F78C /* SignInView.swift */; };
 		07BD4A5A29D59BE900B1F78C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD4A5929D59BE900B1F78C /* ViewModel.swift */; };
+		07BD4A5C29D5C57B00B1F78C /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BD4A5B29D5C57B00B1F78C /* Code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		07BCFC7629D44BC9008887F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07BD4A5729D57E3300B1F78C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		07BD4A5929D59BE900B1F78C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		07BD4A5B29D5C57B00B1F78C /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				07BCFC6829D42F7C008887F1 /* DigicodeApp.swift */,
 				07BCFC6A29D42F7C008887F1 /* ContentView.swift */,
+				07BD4A5B29D5C57B00B1F78C /* Code.swift */,
 				07BD4A5929D59BE900B1F78C /* ViewModel.swift */,
 				07BD4A5729D57E3300B1F78C /* SignInView.swift */,
 				07BCFC6C29D42F7E008887F1 /* Assets.xcassets */,
@@ -175,6 +178,7 @@
 				07BCFC6B29D42F7C008887F1 /* ContentView.swift in Sources */,
 				07BD4A5A29D59BE900B1F78C /* ViewModel.swift in Sources */,
 				07BCFC6929D42F7C008887F1 /* DigicodeApp.swift in Sources */,
+				07BD4A5C29D5C57B00B1F78C /* Code.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
